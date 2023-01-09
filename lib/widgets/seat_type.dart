@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:movieticketbookingapp/controllers/seat_selection_controller.dart';
-import 'package:movieticketbookingapp/utils/mytheme.dart';
+import 'package:movie_ticket_app/controller/seat_selection_controller.dart';
+import 'package:movie_ticket_app/utils/mytheme.dart';
 
 import '../utils/dummy_data.dart';
 

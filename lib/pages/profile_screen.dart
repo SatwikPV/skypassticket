@@ -1,10 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:movieticketbookingapp/controllers/profile_controller.dart';
-import '../controllers/auth_controller.dart';
+import '../controller/auth_controller.dart';
+import '../controller/profile_controller.dart';
 import '../utils/constants.dart';
 import '../utils/mytheme.dart';
 
@@ -28,12 +27,12 @@ class _ProfileScreenState extends State<ProfileScreen>
     super.initState();
     Get.put(ProfileController());
     _animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 300));
+        vsync: this, duration: const Duration(milliseconds: 50));
     _animationImage =
-        Tween<Offset>(begin: Offset.zero, end: const Offset(0.0, -0.4))
+        Tween<Offset>(begin: Offset.zero, end: const Offset(0.0, -0.8))
             .animate(_animationController);
     _animationCamera =
-        Tween<Offset>(begin: Offset.zero, end: const Offset(0.0, -1.1))
+        Tween<Offset>(begin: Offset.zero, end: const Offset(0.0, -1.8))
             .animate(_animationController);
   }
 
@@ -45,7 +44,8 @@ class _ProfileScreenState extends State<ProfileScreen>
     picUrl = picUrl ?? Constants.dummyAvatar;
     String? name = AuthController.instance.user!.displayName ?? "NO Name";
     String? email = AuthController.instance.user!.email;
-    String? mobile = AuthController.instance.user!.phoneNumber ?? "0000000000";
+    String? mobile =
+        AuthController.instance.user!.phoneNumber ?? "+91 0000000000";
     mobileController.text = mobile;
     nameController.text = name;
     emailController.text = email.toString();
@@ -55,7 +55,7 @@ class _ProfileScreenState extends State<ProfileScreen>
         centerTitle: true,
         elevation: 0,
       ),
-      body: SizedBox(
+      body: Container(
         height: double.maxFinite,
         width: double.maxFinite,
         child: Stack(
@@ -69,9 +69,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                     notification.metrics.minScrollExtent * 0.5) {
                   _animationController.reverse();
                 }
-                if (kDebugMode) {
-                  print(notification.metrics.pixels);
-                }
+                print(notification.metrics.pixels);
                 return true;
               },
               child: SingleChildScrollView(
@@ -151,7 +149,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                       child: TextFormField(
                         initialValue: email,
                         readOnly: true,
-                        style: const TextStyle(color: Colors.black),
+                        style: TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                           border: const OutlineInputBorder(
                               borderSide: BorderSide.none),
@@ -186,7 +184,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                         child: TextFormField(
                           initialValue: mobile,
                           readOnly: ProfileController.instance.isEdit.value,
-                          style: const TextStyle(color: Colors.black),
+                          style: TextStyle(color: Colors.black),
                           decoration: InputDecoration(
                             border: const OutlineInputBorder(
                                 borderSide: BorderSide.none),

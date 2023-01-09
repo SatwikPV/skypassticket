@@ -61,7 +61,8 @@ class SeatLayoutModel {
     return SeatLayoutModel(
       rows: map['rows']?.toInt() ?? 0,
       cols: map['cols']?.toInt() ?? 0,
-      seatTypes: List<Map<String, dynamic>>.from(map['seatTypes']?.map((x) => x)),
+      seatTypes:
+          List<Map<String, dynamic>>.from(map['seatTypes']?.map((x) => x)),
       theatreId: map['theatreId']?.toInt() ?? 0,
       gap: map['gap']?.toInt() ?? 0,
       gapColIndex: map['gapColIndex']?.toInt() ?? 0,
@@ -72,7 +73,8 @@ class SeatLayoutModel {
 
   String toJson() => json.encode(toMap());
 
-  factory SeatLayoutModel.fromJson(String source) => SeatLayoutModel.fromMap(json.decode(source));
+  factory SeatLayoutModel.fromJson(String source) =>
+      SeatLayoutModel.fromMap(json.decode(source));
 
   @override
   String toString() {

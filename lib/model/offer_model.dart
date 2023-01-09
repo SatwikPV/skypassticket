@@ -2,8 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
-
-import 'package:movieticketbookingapp/utils/mytheme.dart';
+import '../utils/mytheme.dart';
 
 class OfferModel {
   final String title;
@@ -68,14 +67,16 @@ class OfferModel {
       startTime: DateTime.fromMillisecondsSinceEpoch(map['startTime']),
       discount: map['discount']?.toDouble() ?? 0.0,
       color: Color(map['color']),
-      gradientColor: List<Color>.from(map['gradientColor']?.map((x) => Color(x))),
+      gradientColor:
+          List<Color>.from(map['gradientColor']?.map((x) => Color(x))),
       icon: map['icon'] ?? '',
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory OfferModel.fromJson(String source) => OfferModel.fromMap(json.decode(source));
+  factory OfferModel.fromJson(String source) =>
+      OfferModel.fromMap(json.decode(source));
 
   @override
   String toString() {

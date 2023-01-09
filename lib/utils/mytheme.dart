@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyTheme {
-  static const splash = Color(0xFFE81667);
+  static const splash = Color(0xFF3FE0B0);
   static const statusBar = Color(0xFF2E3147);
   static const appBarColor = Color(0xFF222539);
   static const greenColor = Color(0xFF2EC492);

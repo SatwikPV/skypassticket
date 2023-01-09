@@ -46,7 +46,8 @@ class EventModel {
 
   String toJson() => json.encode(toMap());
 
-  factory EventModel.fromJson(String source) => EventModel.fromMap(json.decode(source));
+  factory EventModel.fromJson(String source) =>
+      EventModel.fromMap(json.decode(source));
 
   @override
   String toString() {
@@ -66,6 +67,9 @@ class EventModel {
 
   @override
   int get hashCode {
-    return title.hashCode ^ description.hashCode ^ bannerUrl.hashCode ^ date.hashCode;
+    return title.hashCode ^
+        description.hashCode ^
+        bannerUrl.hashCode ^
+        date.hashCode;
   }
 }

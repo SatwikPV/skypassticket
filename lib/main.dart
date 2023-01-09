@@ -1,17 +1,17 @@
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'controllers/auth_controller.dart';
-import 'controllers/common_controller.dart';
+import 'package:movie_ticket_app/utils/mytheme.dart';
+import 'controller/auth_controller.dart';
+import 'controller/common_controller.dart';
 import 'pages/splash_screen.dart';
-import 'utils/mytheme.dart';
-import 'controllers/location_controller.dart';
+import 'pages/home_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   Get.put(AuthController());
-  Get.put(LocationController());
   Get.put(CommonController());
   runApp(const MyApp());
 }
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       theme: MyTheme.myLightTheme,
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
+      home: const HomeScreen(),
     );
   }
 }

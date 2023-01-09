@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:movieticketbookingapp/controllers/auth_controller.dart';
-import 'package:movieticketbookingapp/utils/mytheme.dart';
+import 'package:movie_ticket_app/utils/mytheme.dart';
 
+import '../controller/auth_controller.dart';
 import '../utils/constants.dart';
 
 class ReviewBlock extends StatelessWidget {

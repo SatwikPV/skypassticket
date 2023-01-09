@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:movieticketbookingapp/controllers/auth_controller.dart';
-import 'package:movieticketbookingapp/controllers/seat_selection_controller.dart';
-import 'package:movieticketbookingapp/model/movie_model.dart';
-import 'package:movieticketbookingapp/model/theatre_model.dart';
-import 'package:movieticketbookingapp/utils/mytheme.dart';
-import 'package:movieticketbookingapp/widgets/no_of_seats.dart';
-import 'package:movieticketbookingapp/widgets/seat_layout.dart';
-import 'package:movieticketbookingapp/widgets/seat_type.dart';
-import 'package:movieticketbookingapp/widgets/theatre_block.dart';
-
+import 'package:movie_ticket_app/widgets/no_of_seats.dart';
+import 'package:movie_ticket_app/widgets/seat_layout.dart';
+import 'package:movie_ticket_app/widgets/theatre_block.dart';
+import '../controller/auth_controller.dart';
+import '../controller/seat_selection_controller.dart';
+import '../model/movie_model.dart';
+import '../model/theatre_model.dart';
 import '../utils/dummy_data.dart';
+import '../widgets/seat_type.dart';
 
 class SeatSelectionScreen extends StatefulWidget {
   final TheatreModel theatreModel;
@@ -76,7 +74,7 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
         height: AppBar().preferredSize.height,
         child: ElevatedButton(
           onPressed: () {
-            //print(SeatSelectionController.instance.isSeatSelection.value);
+            print(SeatSelectionController.instance.isSeatSelection.value);
 
             if (SeatSelectionController.instance.isSeatSelection.value) {
               if (SeatSelectionController.instance.seatPrice <= 0.0) {
@@ -96,7 +94,7 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
           },
           style: ElevatedButton.styleFrom(
             elevation: 0,
-            backgroundColor: MyTheme.splash,
+            primary: const Color(0xFF3FE0B0),
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.zero,
             ),

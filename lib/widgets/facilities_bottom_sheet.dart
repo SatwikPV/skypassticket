@@ -2,19 +2,17 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../controllers/location_controller.dart';
 import '../utils/dummy_data.dart';
 import '../utils/mytheme.dart';
 
 class FacilitesBottomSheet extends StatelessWidget {
   final dynamic model;
   const FacilitesBottomSheet({Key? key, required this.model}) : super(key: key);
-  static const CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
-    zoom: 14.4746,
-  );
+  // static const CameraPosition _kGooglePlex = CameraPosition(
+  //   target: LatLng(37.42796133580664, -122.085749655962),
+  //   zoom: 14.4746,
+  // );
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -28,24 +26,12 @@ class FacilitesBottomSheet extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                height: 150,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                height: 100,
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(10)),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: GoogleMap(
-                    mapType: MapType.normal,
-                    initialCameraPosition: _kGooglePlex,
-                    gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>{
-                      Factory<OneSequenceGestureRecognizer>(
-                        () => EagerGestureRecognizer(),
-                      )
-                    },
-                    onMapCreated: (GoogleMapController controller) {
-                      //_controller.complete(controller);
-                    },
-                    zoomControlsEnabled: false,
-                  ),
-                ),
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset("assets/map2.png")),
               ),
               const SizedBox(
                 height: 10,
@@ -55,19 +41,20 @@ class FacilitesBottomSheet extends StatelessWidget {
                 style: const TextStyle(fontSize: 18),
               ),
               RichText(
-                text: TextSpan(
+                text: const TextSpan(
                   children: [
-                    const WidgetSpan(
+                    WidgetSpan(
                       child: Icon(
                         Icons.location_on,
                         size: 25,
                         color: Color(0xff999999),
                       ),
                     ),
-                    TextSpan(
-                      text: LocationController.instance.city.value,
-                      style: const TextStyle(color: Color(0xff999999), fontSize: 14),
-                    ),
+                    // TextSpan(
+                    //   text: LocationController.instance.city.value,
+                    //   style: const TextStyle(
+                    //       color: Color(0xff999999), fontSize: 14),
+                    // ),
                   ],
                 ),
               ),

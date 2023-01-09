@@ -1,10 +1,10 @@
-import 'dart:io';
+import 'dart:io' show Platform;
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import '../controllers/auth_controller.dart';
-import '../controllers/calendar_controller.dart';
+import 'package:movie_ticket_app/controller/auth_controller.dart';
+import 'package:movie_ticket_app/controller/calendar_controller.dart';
 import '../utils/mytheme.dart';
 
 class CustomCalendar extends StatelessWidget {
@@ -19,7 +19,6 @@ class CustomCalendar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: avoid_unnecessary_containers
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,7 +62,6 @@ class CustomCalendar extends StatelessWidget {
               8,
               (index) {
                 if (index == 0) {
-                  // ignore: sized_box_for_whitespace
                   return Container(
                     width: 40,
                     child: const Text(
@@ -130,9 +128,9 @@ class CustomCalendar extends StatelessWidget {
               8,
               (index) {
                 if (index == 0) {
-                  return const SizedBox(
+                  return Container(
                     width: 40,
-                    child: Text(
+                    child: const Text(
                       "Next week",
                       textAlign: TextAlign.right,
                       style: TextStyle(fontSize: 10),

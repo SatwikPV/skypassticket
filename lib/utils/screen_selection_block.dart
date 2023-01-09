@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:movieticketbookingapp/controllers/common_controller.dart';
+import 'package:movie_ticket_app/controller/common_controller.dart';
+import 'package:movie_ticket_app/utils/dummy_data.dart';
+import 'package:movie_ticket_app/utils/mytheme.dart';
 
-import 'package:movieticketbookingapp/utils/dummy_data.dart';
-import 'package:movieticketbookingapp/utils/mytheme.dart';
-
-// ignore: must_be_immutable
 class ScreenSelectionBlock extends StatelessWidget {
   Function(String) onScreenSelect;
   ScreenSelectionBlock({
@@ -16,7 +14,7 @@ class ScreenSelectionBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final CommonController controller = CommonController.instance;
-    return SizedBox(
+    return Container(
       height: double.maxFinite,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,7 +22,7 @@ class ScreenSelectionBlock extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(20),
             child: Text(
-              "Tamil ${controller.screen.value}",
+              "Hindi ${controller.screen.value}",
               style: const TextStyle(fontSize: 16),
             ),
           ),

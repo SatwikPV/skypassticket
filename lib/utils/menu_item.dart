@@ -1,12 +1,13 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import '../pages/view_all_screen.dart';
-import '../utils/dummy_data.dart';
 
-class MyMenuItem extends StatelessWidget {
-  const MyMenuItem({Key? key}) : super(key: key);
+import 'package:movie_ticket_app/utils/dummy_data.dart';
+
+import '../pages/view_all_screen.dart';
+
+class Menuitem extends StatelessWidget {
+  const Menuitem({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +23,8 @@ class MyMenuItem extends StatelessWidget {
             padding: const EdgeInsets.only(top: 10, left: 20.0, right: 10),
             child: GestureDetector(
               onTap: () {
-                if (kDebugMode) {
-                  print(menus[i].name);
-                }
-                //sending argument to next page
+                debugPrint(menus[i].name);
+                // sending argument to next page
                 Get.to(() => const ViewAllScreen(), arguments: menus[i]);
               },
               child: Column(

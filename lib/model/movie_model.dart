@@ -63,7 +63,8 @@ class MovieModel {
 
   String toJson() => json.encode(toMap());
 
-  factory MovieModel.fromJson(String source) => MovieModel.fromMap(json.decode(source));
+  factory MovieModel.fromJson(String source) =>
+      MovieModel.fromMap(json.decode(source));
 
   @override
   String toString() {

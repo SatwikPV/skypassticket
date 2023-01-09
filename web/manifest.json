@@ -1,6 +1,6 @@
 {
-    "name": "movieticketbookingapp",
-    "short_name": "movieticketbookingapp",
+    "name": "movie_ticket_app",
+    "short_name": "movie_ticket_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

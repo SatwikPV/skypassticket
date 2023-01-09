@@ -1,16 +1,18 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:movie_ticket_app/pages/login_screen.dart';
+
 import '../utils/mytheme.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+class SplashSreen extends StatefulWidget {
+  const SplashSreen({Key? key}) : super(key: key);
 
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  State<SplashSreen> createState() => _SplashSreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen>
+class _SplashSreenState extends State<SplashSreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _animation;
@@ -18,12 +20,17 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     _animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 1000));
+        vsync: this, duration: const Duration(milliseconds: 2000));
     _animation = CurvedAnimation(
         parent: _animationController,
         curve: Curves.bounceOut,
         reverseCurve: Curves.bounceIn);
     _animationController.forward();
+
+    Timer(
+        const Duration(milliseconds: 2500),
+        () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (_) => const LoginScreen())));
     super.initState();
   }
 
@@ -38,16 +45,14 @@ class _SplashScreenState extends State<SplashScreen>
     SystemChrome.setSystemUIOverlayStyle(
         const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Scaffold(
-      backgroundColor: MyTheme.splash,
-      body: Center(
-        child: ScaleTransition(
-          scale: _animation,
-          child: SvgPicture.asset(
-            "assets/icons/splash_icon.svg",
-            height: 70,
+        backgroundColor: MyTheme.splash,
+        body: Center(
+          child: ScaleTransition(
+            scale: _animation,
+            child: Image.asset(
+              "assets/1974120.png",
+            ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }

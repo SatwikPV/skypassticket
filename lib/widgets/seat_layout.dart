@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:movieticketbookingapp/controllers/seat_selection_controller.dart';
-import 'package:movieticketbookingapp/model/seat_layout_model.dart';
-import 'package:movieticketbookingapp/utils/mytheme.dart';
+import 'package:movie_ticket_app/controller/seat_selection_controller.dart';
+import 'package:movie_ticket_app/model/seat_layout_model.dart';
+import 'package:movie_ticket_app/utils/mytheme.dart';
 
 // ignore: must_be_immutable
 class SeatLayout extends StatelessWidget {
@@ -144,9 +144,9 @@ class SeatLayout extends StatelessWidget {
                                                     1) &&
                                         (row != model.rowBreaks[index] - 1 &&
                                             model.isLastFilled)) {
-                                      return const Padding(
-                                        padding: EdgeInsets.all(5.0),
-                                        child: SizedBox(
+                                      return Padding(
+                                        padding: const EdgeInsets.all(5.0),
+                                        child: Container(
                                           height: 20,
                                           width: 20,
                                         ),
@@ -155,7 +155,6 @@ class SeatLayout extends StatelessWidget {
 
                                     //numbering the seats
                                     seatCounter++;
-                                    // ignore: unused_local_variable
                                     String seatNo = "$seatCounter";
                                     double price =
                                         model.seatTypes[seatLength - index - 1]

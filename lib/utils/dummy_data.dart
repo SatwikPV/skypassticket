@@ -1,20 +1,20 @@
-import 'package:movieticketbookingapp/model/seat_layout_model.dart';
-
-import '../model/crew_cast_model.dart';
-import '../model/movie_model.dart';
-import '../model/offer_model.dart';
-import '../model/theatre_model.dart';
-import '../utils/mytheme.dart';
-
 import '../model/ad_slider_model.dart';
 import '../model/event_model.dart';
-import '../model/menu_model.dart';
-import '../utils/constants.dart';
+import '../model/manu_model.dart';
+import '../model/movie_model.dart';
+import '../model/offer_model.dart';
+import '../model/seat_layout_model.dart';
+import '../model/theatre_model.dart';
+import 'constants.dart';
+import 'mytheme.dart';
 
 List<AdSliderModel> sliderData = [
-  AdSliderModel(url: "assets/slider_banner.png", redirectUrl: Constants.baseApiUrl),
-  AdSliderModel(url: "assets/slider_banner.png", redirectUrl: Constants.baseApiUrl),
-  AdSliderModel(url: "assets/slider_banner.png", redirectUrl: Constants.baseApiUrl),
+  AdSliderModel(
+      url: "assets/slider_banner.png", redirectUrl: Constants.baseApiUrl),
+  AdSliderModel(
+      url: "assets/slider_banner.png", redirectUrl: Constants.baseApiUrl),
+  AdSliderModel(
+      url: "assets/slider_banner.png", redirectUrl: Constants.baseApiUrl),
 ];
 
 List<MenuModel> menus = [
@@ -50,59 +50,62 @@ List<OfferModel> offers = [
 
 List<MovieModel> movies = [
   MovieModel(
-    title: "Bigil",
-    description: "description",
-    actors: ["actor a", "actor b"],
-    like: 84,
-    bannerUrl: "assets/movies/movie1.png",
+    title: "RRR",
+    description:
+        "RRR[note 1] is a 2022 Indian Telugu-language epic action drama film directed by S. S. Rajamouli who wrote the film with V. Vijayendra Prasad.",
+    actors: ["Ram Charan", "N.T Rama Rao"],
+    like: 99,
+    bannerUrl: "assets/movies/RRR.png",
   ),
   MovieModel(
-    title: "Kaithi",
-    description: "description",
-    actors: ["actor a", "actor b"],
-    like: 84,
-    bannerUrl: "assets/movies/movie2.png",
+    title: "KGF Chapter 2",
+    description:
+        "The film stars Yash, Sanjay Dutt, Raveena Tandon, Srinidhi Shetty and Prakash Raj. It follows the assassin Rocky, who after establishing himself as the king.",
+    actors: ["Yash ", "Sanjay Dutt"],
+    like: 91,
+    bannerUrl: "assets/movies/kgf.png",
   ),
   MovieModel(
-    title: "Asuran",
-    description: "description",
-    actors: ["actor a", "actor b"],
+    title: "Jersey",
+    description:
+        "Indian Hindi-language Sports drama film written and directed by Gowtam Tinnanuri, being his Hindi directorial debut and the remake of his 2019 Telugu film of the same title",
+    actors: ["Shahid Kapoor", "Mrunal Thakur"],
     like: 84,
-    bannerUrl: "assets/movies/movie3.png",
+    bannerUrl: "assets/movies/jersey.png",
   ),
   MovieModel(
-    title: "Sarkar",
-    description: "description",
-    actors: ["actor a", "actor b"],
-    like: 84,
-    bannerUrl: "assets/movies/movie4.png",
+    title: "Sher Shivaji",
+    description: "Sher Shivaji Movies is inspired mugal saltant. ",
+    actors: ["Chinmay Mandlekar", "Mukesh Rishi"],
+    like: 87,
+    bannerUrl: "assets/movies/sher shivaji.png",
   ),
 ];
 
 List<EventModel> events = [
   EventModel(
-    title: "Happy Halloween 2K19",
-    description: "Music show",
-    date: "date",
-    bannerUrl: "assets/events/event1.png",
+    title: "DJ Night",
+    description: "Dance and Music show",
+    date: "5 June 2022",
+    bannerUrl: "assets/events/dj-night.png",
   ),
   EventModel(
-    title: "Music DJ king monger Sert...",
-    description: "Music show",
-    date: "date",
-    bannerUrl: "assets/events/event2.png",
-  ),
-  EventModel(
-    title: "Summer sounds festiva..",
+    title: "Kapil Sharma Show",
     description: "Comedy show",
-    date: "date",
-    bannerUrl: "assets/events/event3.png",
+    date: "10 June 2022",
+    bannerUrl: "assets/events/kapil_show.png",
   ),
   EventModel(
-    title: "Happy Halloween 2K19",
+    title: "Live Music Concert",
+    description: "Singing show",
+    date: "12 June 2022",
+    bannerUrl: "assets/events/Live-Music-Concert.png",
+  ),
+  EventModel(
+    title: "Rising Stars",
     description: "Music show",
-    bannerUrl: "assets/events/event4.png",
-    date: "date",
+    date: "20 June 2022",
+    bannerUrl: "assets/events/Rising-Stars.png",
   ),
 ];
 
@@ -140,38 +143,10 @@ List<String> cities = [
   "Chennai",
   "Lucknow",
 ];
-
-List<CrewCastModel> crewCast = [
-  CrewCastModel(
-    movieId: "123",
-    castId: "123",
-    name: "Chadwick",
-    image: "assets/actors/chadwick.png",
-  ),
-  CrewCastModel(
-    movieId: "123",
-    castId: "123",
-    name: "Letitia Wright",
-    image: "assets/actors/LetitiaWright.png",
-  ),
-  CrewCastModel(
-    movieId: "123",
-    castId: "123",
-    name: "B. Jordan",
-    image: "assets/actors/b_jordan.png",
-  ),
-  CrewCastModel(
-    movieId: "123",
-    castId: "123",
-    name: "Lupita Nyong",
-    image: "assets/actors/lupita_nyong.png",
-  ),
-];
-
 List<TheatreModel> theatres = [
-  TheatreModel(id: "1", name: "Arasan Cinemas A/C 2K Dolby"),
-  TheatreModel(id: "2", name: "INOX - Prozone mall"),
-  TheatreModel(id: "3", name: "Karpagam theatres - 4K Dolby Atoms"),
+  TheatreModel(id: "1", name: "PVR"),
+  TheatreModel(id: "2", name: "Carnival Cinemas"),
+  TheatreModel(id: "3", name: "Miraj cinemas"),
   TheatreModel(id: "4", name: "KG theatres - 4K"),
 ];
 
@@ -191,9 +166,9 @@ final seatLayout = SeatLayoutModel(
     rows: 10,
     cols: 11,
     seatTypes: [
-      {"title": "King", "price": 120.0, "status": "Filling Fast"},
-      {"title": "Queen", "price": 100.0, "status": "Available"},
-      {"title": "Jack", "price": 80.0, "status": "Available"},
+      {"title": "Premium", "price": 120.0, "status": "Filling Fast"},
+      {"title": "Gold", "price": 100.0, "status": "Available"},
+      {"title": "Silver", "price": 80.0, "status": "Available"},
     ],
     theatreId: 123,
     gap: 2,

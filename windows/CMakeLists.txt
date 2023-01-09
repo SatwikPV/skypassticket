@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(movieticketbookingapp LANGUAGES CXX)
+project(movie_ticket_app LANGUAGES CXX)
 
-set(BINARY_NAME "movieticketbookingapp")
+set(BINARY_NAME "movie_ticket_app")
 
 cmake_policy(SET CMP0063 NEW)
 

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:movieticketbookingapp/utils/mytheme.dart';
+import 'package:flutter_svg/svg.dart';
+
+import 'mytheme.dart';
 
 class SocialLoginButtons extends StatelessWidget {
   final Function() onGoogleClick;
   final Function() onFbClick;
-  const SocialLoginButtons({Key? key, required this.onFbClick, required this.onGoogleClick}) : super(key: key);
+  const SocialLoginButtons(
+      {Key? key, required this.onFbClick, required this.onGoogleClick})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,8 @@ class SocialLoginButtons extends StatelessWidget {
               onTap: onGoogleClick,
               borderRadius: BorderRadius.circular(5),
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
                 child: Row(
                   children: [
                     SvgPicture.asset("assets/icons/google.svg"),
@@ -58,7 +62,8 @@ class SocialLoginButtons extends StatelessWidget {
               onTap: onFbClick,
               borderRadius: BorderRadius.circular(5),
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
                 child: Row(
                   children: [
                     SvgPicture.asset("assets/icons/facebook.svg"),

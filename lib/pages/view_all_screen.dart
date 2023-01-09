@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:movieticketbookingapp/controllers/common_controller.dart';
-import 'package:movieticketbookingapp/controllers/location_controller.dart';
-import 'package:movieticketbookingapp/utils/mytheme.dart';
-import 'package:movieticketbookingapp/widgets/item_block.dart';
-import '../model/menu_model.dart';
+import '../controller/common_controller.dart';
+import '../model/manu_model.dart';
 import '../utils/dummy_data.dart';
+import '../utils/mytheme.dart';
+import '../widgets/item_block.dart';
 
 class ViewAllScreen extends StatefulWidget {
   const ViewAllScreen({Key? key}) : super(key: key);
@@ -19,9 +18,11 @@ class _ViewAllScreenState extends State<ViewAllScreen> {
   //getting arguments
   MenuModel menu = Get.arguments;
 
-  final selectedTextSyle = const TextStyle(color: MyTheme.splash, fontFamily: "Poppins");
+  final selectedTextSyle =
+      const TextStyle(color: MyTheme.splash, fontFamily: "Poppins");
 
-  final normalTextSyle = const TextStyle(color: Colors.black45, fontFamily: "Poppins");
+  final normalTextSyle =
+      const TextStyle(color: Colors.black45, fontFamily: "Poppins");
 
   late List<dynamic> list;
 
@@ -46,18 +47,20 @@ class _ViewAllScreenState extends State<ViewAllScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
-            "${menu.name} in ${LocationController.instance.city}",
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-          ),
-          elevation: 0,
+          //   title: Text(
+          //     "${menu.name} in ${LocationController.instance.city}",
+          //     maxLines: 1,
+          //     overflow: TextOverflow.ellipsis,
+          //   ),
+          // elevation: 0,
           actions: [
             IconButton(
               onPressed: () {
                 showSearch(
                   context: context,
-                  delegate: MySearchDelegate(list: list, isMovie: menu.name.toLowerCase().contains("movies")),
+                  delegate: MySearchDelegate(
+                      list: list,
+                      isMovie: menu.name.toLowerCase().contains("movies")),
                 );
               },
               icon: SvgPicture.asset("assets/icons/search.svg"),
@@ -175,7 +178,8 @@ class MySearchDelegate extends SearchDelegate<String> {
         ? list
         : list
             .where(
-              (element) => element.title.toLowerCase().contains(query.toLowerCase()),
+              (element) =>
+                  element.title.toLowerCase().contains(query.toLowerCase()),
             )
             .toList();
 

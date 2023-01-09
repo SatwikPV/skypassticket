@@ -1,17 +1,15 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:movieticketbookingapp/pages/seat_selection_screen.dart';
-import '../controllers/common_controller.dart';
-import '../controllers/seat_selection_controller.dart';
+import 'package:movie_ticket_app/controller/calendar_controller.dart';
+import 'package:movie_ticket_app/controller/common_controller.dart';
+import 'package:movie_ticket_app/controller/seat_selection_controller.dart';
+import 'package:movie_ticket_app/pages/seat_selection_screen.dart';
 import '../utils/screen_selection_block.dart';
 import '../utils/custom_calendar.dart';
-import '../controllers/calendar_controller.dart';
 import '../model/movie_model.dart';
 import '../utils/dummy_data.dart';
-import '../utils/mytheme.dart';
 import '../widgets/theatre_block.dart';
 
 class ListCinemaScreen extends StatefulWidget {
@@ -29,7 +27,7 @@ class _ListCinemaScreenState extends State<ListCinemaScreen> {
 
   String selectedDate = DateFormat("dd MMM").format(DateTime.now());
 
-  String selectedLanguage = "English";
+  String selectedLanguage = "Hindi";
 
   String selectedScreen = "3D";
   late CalendarController commonController;
@@ -46,17 +44,15 @@ class _ListCinemaScreenState extends State<ListCinemaScreen> {
     return WillPopScope(
       onWillPop: () {
         Get.delete<CalendarController>();
-        if (kDebugMode) {
-          print(commonController.selectedMovieDate.value);
-        }
+        print(commonController.selectedMovieDate.value);
         return Future.value(true);
       },
       child: Scaffold(
         backgroundColor: const Color(0xFFF5F5FA),
         bottomNavigationBar: BottomAppBar(
-          color: MyTheme.appBarColor,
+          color: const Color(0xFF222539),
           elevation: 0,
-          child: SizedBox(
+          child: Container(
             width: double.maxFinite,
             height: AppBar().preferredSize.height,
             child: Row(
@@ -211,8 +207,6 @@ class TheatreSearchDelegate extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    // ignore: todo
-    // TODO: implement buildResults
     throw UnimplementedError();
   }
 

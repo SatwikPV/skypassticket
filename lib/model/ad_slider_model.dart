@@ -34,7 +34,8 @@ class AdSliderModel {
 
   String toJson() => json.encode(toMap());
 
-  factory AdSliderModel.fromJson(String source) => AdSliderModel.fromMap(json.decode(source));
+  factory AdSliderModel.fromJson(String source) =>
+      AdSliderModel.fromMap(json.decode(source));
 
   @override
   String toString() => 'AdSliderModel(url: $url, redirectUrl: $redirectUrl)';
@@ -43,7 +44,9 @@ class AdSliderModel {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is AdSliderModel && other.url == url && other.redirectUrl == redirectUrl;
+    return other is AdSliderModel &&
+        other.url == url &&
+        other.redirectUrl == redirectUrl;
   }
 
   @override

@@ -1,12 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:movieticketbookingapp/controllers/auth_controller.dart';
-import 'package:movieticketbookingapp/controllers/input_validators.dart';
-import 'package:movieticketbookingapp/utils/mytheme.dart';
-import 'package:movieticketbookingapp/utils/social_buttons.dart';
+
+import '../controller/auth_controller.dart';
+import '../controller/input_validator.dart';
+import '../utils/mytheme.dart';
+import '../utils/social_buttons.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -36,7 +36,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset("assets/icons/splash_icon.svg"),
+              Image.asset(
+                "assets/1974120.png",
+                height: 50,
+              ),
               const SizedBox(
                 height: 20,
               ),
@@ -147,7 +150,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         }
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: MyTheme.splash,
+                        primary: MyTheme.splash,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5),
                         ),
@@ -189,7 +192,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 15, bottom: 15),
+                      padding: const EdgeInsets.only(top: 10, bottom: 10),
                       child: SocialLoginButtons(
                           onFbClick: () {}, onGoogleClick: () {}),
                     ),

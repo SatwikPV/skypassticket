@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movieticketbookingapp/utils/dummy_data.dart';
+import 'package:movie_ticket_app/utils/dummy_data.dart';
 
 class CustomSlider extends StatelessWidget {
   // ignore: prefer_typing_uninitialized_variables
@@ -9,8 +9,7 @@ class CustomSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    // ignore: sized_box_for_whitespace
-    return Container(
+    return SizedBox(
       height: size.height * 0.3,
       width: size.width,
       child: Image.asset(

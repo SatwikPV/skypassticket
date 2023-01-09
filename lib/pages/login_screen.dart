@@ -1,24 +1,24 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import '../controllers/auth_controller.dart';
-import '../pages/signup_screen.dart';
+import '../controller/auth_controller.dart';
 import '../utils/mytheme.dart';
 import '../utils/social_buttons.dart';
+import 'package:movie_ticket_app/pages/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final forgotEmailController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final Size _size = MediaQuery.of(context).size;
@@ -35,11 +35,14 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset("assets/icons/splash_icon.svg"),
+              Image.asset(
+                "assets/1974120.png",
+                height: 100,
+              ),
               const Padding(
-                padding: EdgeInsets.only(top: 30),
+                padding: EdgeInsets.only(top: 10),
                 child: Text(
-                  "Welcome Buddies,",
+                  "Welcome Buddies",
                   style: TextStyle(
                     fontSize: 22,
                     color: Colors.white,
@@ -47,14 +50,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               Text(
-                "Login to book your seat, I said its your seat",
+                "Login to book your seat",
                 style: TextStyle(
                   fontSize: 15,
                   color: Colors.white.withOpacity(0.7),
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 10,
               ),
               Container(
                 margin:
@@ -149,7 +152,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 Get.back();
                               },
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: MyTheme.splash,
+                                primary: MyTheme.splash,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5),
                                 ),
@@ -181,7 +184,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             passwordController.text.trim());
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: MyTheme.splash,
+                        primary: MyTheme.splash,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5),
                         ),
@@ -248,7 +251,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           fontWeight: FontWeight.w700),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          //Navigator.push(context, MaterialPageRoute(builder: (_) => SignUpScreen()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => const SignUpScreen()));
                           Get.to(const SignUpScreen());
                         },
                     ),

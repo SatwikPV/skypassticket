@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:movieticketbookingapp/pages/details_screen.dart';
-import 'package:movieticketbookingapp/utils/dummy_data.dart';
-// ignore: unused_import
-import 'package:movieticketbookingapp/utils/mytheme.dart';
-import 'package:movieticketbookingapp/widgets/item_block.dart';
+
+import 'package:movie_ticket_app/utils/dummy_data.dart';
+
+import '../pages/detail_page.dart';
+import '../widgets/item_block.dart';
 
 class MoviesItems extends StatelessWidget {
   const MoviesItems({Key? key}) : super(key: key);
